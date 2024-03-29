@@ -12,10 +12,10 @@ const SharePopup = ({ setShowPopup }) => {
   useLockBodyScroll();
 
   const socialIcons = [
-    <FacbookSimple color={"#1D1D1D"} />,
-    <InstagramSimple color={"#1D1D1D"} />,
-    <TwitterSimple color={"#1D1D1D"} />,
-    <LinkedinSimple color={"#1D1D1D"} />,
+    <InstagramSimple key="instagram" color={"#1D1D1D"} />,
+    <FacbookSimple key="facebook" color={"#1D1D1D"} />,
+    <TwitterSimple key="twitter" color={"#1D1D1D"} />,
+    <LinkedinSimple key="linkedin" color={"#1D1D1D"} />,
   ];
 
   const closePopup = () => {

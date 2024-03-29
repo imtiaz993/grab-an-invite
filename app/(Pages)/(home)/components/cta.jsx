@@ -20,7 +20,7 @@ const CTA = () => {
         <div className="mb-16">
           <h6 className="w-full font-medium mt-4 opacity-70">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text.
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy text.
           </h6>
           <div className="flex items-center mt-5">
             <img src="/images/mountain-sun.png" alt="" className="" />

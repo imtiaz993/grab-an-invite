@@ -28,7 +28,7 @@ const Step1 = () => (
         className="accent-secondary w-5 h-5 mr-2 cursor-pointer"
       />
       <label htmlFor="check_specific_events" className=" cursor-pointer">
-        Yes, I'm looking for events in a specific location
+        Yes, I&apos;m looking for events in a specific location
       </label>
     </div>
     <div className="flex mt-5">
@@ -40,7 +40,7 @@ const Step1 = () => (
         className="accent-secondary w-5 h-5 mr-2 cursor-pointer"
       />
       <label htmlFor="check_various_events" className=" cursor-pointer">
-        No, I'm open to events in various locations
+        No, I&apos;m open to events in various locations
       </label>
     </div>
   </div>

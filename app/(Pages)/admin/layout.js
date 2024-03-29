@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <ul>
             {sidebarOptions.map((item, index) =>
               item.route ? (
-                <Link href={"/admin" + item.route}>
+                <Link href={"/admin" + item.route} key={index}>
                   <li
                     className={`flex gap-3 items-center h-16 w-full pl-[30%] cursor-pointer ${
                       pathname &&
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
                   </li>
                 </Link>
               ) : (
-                <li>
+                <li key={index}>
                   <div
                     className={`flex gap-3 items-center h-16 w-full pl-[30%] cursor-pointer ${
                       item.components.some(

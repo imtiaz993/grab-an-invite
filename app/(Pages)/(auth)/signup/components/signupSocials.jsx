@@ -1,7 +1,12 @@
 import { Google, Facebook, Linkedin, Apple } from "@/icons";
 
 const SignupSocials = () => {
-  const icons = [<Google />, <Facebook />, <Linkedin />, <Apple />];
+  const icons = [
+    <Google key="google" />,
+    <Facebook key="facebook" />,
+    <Linkedin key="linkedIn" />,
+    <Apple key="apple" />,
+  ];
 
   return (
     <div className="flex gap-5">

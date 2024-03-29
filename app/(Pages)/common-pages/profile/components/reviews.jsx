@@ -25,7 +25,7 @@ const Reviews = () => {
             </div>
             <p className="mt-5 font-medium opacity-70">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type.
             </p>
@@ -51,7 +51,7 @@ const Reviews = () => {
             </div>
             <p className="mt-5 font-medium opacity-70">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type.
             </p>
