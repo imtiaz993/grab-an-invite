@@ -11,12 +11,12 @@ const Layout = ({ children }) => {
   const pathname = usePathname();
   const [activeIndex, setActiveIndex] = useState();
 
-  if (status !== "authenticated") {
-    return <h2>Not Logged In</h2>;
-  }
-  if (status === "authenticated" && data.userType !== "host") {
-    return <h2>Not Authorized</h2>;
-  }
+  // if (status !== "authenticated") {
+  //   return <h2>Not Logged In</h2>;
+  // }
+  // if (status === "authenticated" && data.userType !== "host") {
+  //   return <h2>Not Authorized</h2>;
+  // }
 
   return (
     <div className="flex">
