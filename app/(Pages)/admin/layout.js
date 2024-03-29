@@ -62,8 +62,8 @@ const Layout = ({ children }) => {
                       (childRoute) =>
                         pathname && pathname.includes(childRoute.route)
                     )) &&
-                    item.components?.map((i) => (
-                      <Link href={"/admin" + i.route}>
+                    item.components?.map((i, index) => (
+                      <Link href={"/admin" + i.route} key={index}>
                         <p
                           className={`ml-[45%] font-medium px-3 py-4 ${
                             pathname &&
