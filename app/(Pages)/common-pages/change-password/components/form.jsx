@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Form, Formik } from "formik";
-import InputField from "@/components/common/inputField";
+import InputField from "@/components/common/InputField";
 import YesNoPopup from "@/components/yesNoPopup";
 import CustomButton from "../../../../../components/common/customButton";
 

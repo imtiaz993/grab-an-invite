@@ -11,11 +11,12 @@ import {
 
 const Footer = () => {
   const socialIcons = [
-    <InstagramSimple />,
-    <FacbookSimple />,
-    <TwitterSimple />,
-    <LinkedinSimple />,
+    <InstagramSimple key="instagram" />,
+    <FacbookSimple key="facebook" />,
+    <TwitterSimple key="twitter" />,
+    <LinkedinSimple key="linkedin" />,
   ];
+  
   const pageLinks = [
     { name: "Home", link: "/" },
     { name: "About", link: "/" },

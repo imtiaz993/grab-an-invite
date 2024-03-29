@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import YesNoPopup from "@/components/YesNoPopup";
+import YesNoPopup from "@/components/yesNoPopup";
 import CustomButton from "@/components/common/customButton";
 
 const PlanDetails = () => {

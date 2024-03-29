@@ -1,5 +1,36 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      // "@/*": ["./*"],
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/utils/*": [
+        "utils/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/context/*": [
+        "context/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/config/*": [
+        "config/*"
+      ],
+      "@/public/*": [
+        "public/*"
+      ],
+      "@/icons/*": [
+        "icons/*"
+      ],
+      "@/constants/*": [
+        "constants/*"
+      ]
+    },
     "lib": [
       "dom",
       "dom.iterable",

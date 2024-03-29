@@ -2,7 +2,7 @@ import React from "react";
 import { Field, Form, Formik } from "formik";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
 import { Close } from "@/icons";
-import InputField from "@/components/common/inputField";
+import InputField from "@/components/common/InputField";
 import CustomButton from "@/components/common/customButton";
 
 const EventReminder = ({ setShowPopup }) => {
