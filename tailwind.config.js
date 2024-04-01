@@ -17,7 +17,7 @@ module.exports = {
       },
       backgroundImage: {
         "button-primary": "linear-gradient(180deg, #5A6BF2 0%, #2C40E9 100%)",
-        "header-background": "url('../public/images/headerbackground.png')",
+        "header-background": "url('./public/images/headerbackground.png')",
         time: "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%)",
         review: "linear-gradient(180deg, #F2F2F2 0%, #FFFFFF 100%)",
       },
