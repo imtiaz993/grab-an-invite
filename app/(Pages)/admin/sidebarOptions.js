@@ -2,7 +2,7 @@ export const sidebarOptions = [
   { title: "Dashboard", image: "dashboardIcon.png", route: "/dashboard" },
   {
     title: "Users",
-    image: ".png",
+    image: "users.png",
     components: [
       { title: "Guests", route: "/guests" },
       { title: "Hosts", route: "/hosts" },

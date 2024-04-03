@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { Delete } from "@/icons";
+import EntriesPerPage from "@/components/common/entriesPerPage";
 import SuspendPopup from "./suspendPopup";
 import ReviewPopup from "./reviewPopup";
 
@@ -14,19 +15,7 @@ const GuestsContainer = () => {
       {reviewPopup && <ReviewPopup setShowPopup={setReviewPopup} />}
 
       <div className="mt-10 px-7 py-6 rounded-lg shadow-blog-card">
-        <div className="">
-          <span>Show</span>
-          <select
-            name="numEntries"
-            className="w-20 mx-3 p-2 border border-[#1D1D1D33] rounded-md"
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-          <span>Entires</span>
-        </div>
+        <EntriesPerPage/>
         <div className="mt-7 rounded-lg border border-[#1D1D1D33] overflow-hidden">
           <table className="w-full text-left">
             <thead className="bg-[#F5F5F5] text-secondary font-semibold">

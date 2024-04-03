@@ -1,6 +1,7 @@
-'use client' // temporary resolve customButton issue without use client
+"use client"; // temporary resolve customButton issue without use client
 
 import React from "react";
+import Link from "next/link";
 import MinimalEventCard from "@/components/minimalEventCard";
 import { Graph } from "@/icons";
 import CustomButton from "@/components/common/customButton";
@@ -12,7 +13,9 @@ const DashboardPage = () => {
         <img src="/images/dashboardImages/heartBreak.png" alt="" className="" />
         <p className="w-3/5 text-center mt-2 text-2xl font-bold">
           You have only 3 request left, If you want more request
-          <span className="text-secondary"> upgrade your plan</span>
+          <Link href={"/guest/plans"} className="text-secondary">
+            upgrade your plan
+          </Link>
         </p>
         <CustomButton
           width="w-36"

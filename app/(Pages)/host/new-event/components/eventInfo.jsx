@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Field } from "formik";
 import Dropdown from "@/components/common/dropdown";
 import { Delete, Pencil } from "@/icons/index";
+import { weekdays } from "@/constants/calandar";
 
 const EventInfo = ({ recurring, recurringType }) => {
   const [recurringValue, setRecurringValue] = useState();
@@ -12,16 +13,6 @@ const EventInfo = ({ recurring, recurringType }) => {
     "Week Day",
     "Every Single Date Of Month",
     "Multiple Date Of Month",
-  ];
-
-  const weekdays = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
   ];
 
   return (

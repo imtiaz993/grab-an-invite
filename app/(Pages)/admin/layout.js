@@ -23,8 +23,8 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex">
-      <div className="min-w-[21%] bg-primary min-h-screen text-white sticky top-0 bottom-0">
-        <div className="pt-20 flex justify-center">
+      <div className="w-80 bg-primary text-white h-screen overflow-auto">
+        <div className="pt-20 flex justify-center w-full">
           <Link href={"/"}>
             <img src="/images/logo.png" alt="" className="w-44 h-6" />
           </Link>
@@ -104,7 +104,7 @@ const Layout = ({ children }) => {
           </ul>
         </div>
       </div>
-      <div className="w-full">{children}</div>
+      <div className="w-[calc(100%-320px)] max-h-screen overflow-auto">{children}</div>
     </div>
   );
 };
