@@ -22,9 +22,10 @@ export const authOptions = (req, res) => {
       async session({ session, token }) {
         const user = token.user;
 
-        session.user.id = user.id;
+        session.user.id = user._id;
+        session.user.name = user.name;
         session.user.email = user.email;
-        session.user.role = user.type;
+        session.user.role = user.role;
         session.jwt = token.jwt;
 
         return session;
@@ -51,14 +52,13 @@ export const authOptions = (req, res) => {
               email: credentials?.email,
               password: credentials?.password,
             });
-            console.log(data);
             if (status === 200) {
               return { user: data };
             } else {
               return null;
             }
           } catch (error) {
-            throw new Error(error.error);
+            throw new Error(error.message);
           }
         },
       }),

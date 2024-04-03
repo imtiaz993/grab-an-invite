@@ -40,7 +40,7 @@ const PersonalDetailsPopup = ({ setShowPopup }) => {
                       "select",
                       ...["Male", "Female", "Prefer not to say"],
                     ]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 <div className="mt-10">
@@ -61,7 +61,7 @@ const PersonalDetailsPopup = ({ setShowPopup }) => {
                         "Prefer not to say",
                       ],
                     ]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 {
@@ -88,7 +88,7 @@ const PersonalDetailsPopup = ({ setShowPopup }) => {
                             "select",
                             ...["Male", "Female", "Prefer not to say"],
                           ]}
-                          className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                          box
                         />
                       </div>
                       <div className="w-full">
@@ -98,7 +98,7 @@ const PersonalDetailsPopup = ({ setShowPopup }) => {
                         <Field
                           type="date"
                           name="salaryRange"
-                          className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                          className="mt-3 text-base focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
                         />
                       </div>
                     </div>

@@ -1,12 +1,17 @@
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({ data }) => {
+  const {
+    user: { role },
+  } = data;
+
   const links = [
-    { name: "Dashboard", link: "/" },
-    { name: "Events", link: "/" },
-    { name: "Requests", link: "/" },
-    { name: "Invites", link: "/" },
-    { name: "Profile", link: "/" },
+    { name: "Dashboard", link: `${role}/dashboard` },
+    // { name: "Events", link: `${role}/dashboard` },
+    // { name: "Requests", link: `${role}/dashboard` },
+    // { name: "Invites", link: `${role}/dashboard` },
+    // { name: "Profile", link: `${role}/profile` },
   ];
 
   return (
@@ -21,9 +26,9 @@ const ProfileDropdown = () => {
         </ul>
 
         <div className="p-4 border-t-[#1D1D1D33] border-t">
-          <Link href={"/"} className="font-medium">
+          <p onClick={async () => await signOut()} className="font-medium">
             Logout
-          </Link>
+          </p>
         </div>
       </div>
     </div>

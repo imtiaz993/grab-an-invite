@@ -55,7 +55,7 @@ const IndustryPopup = ({ setShowPopup }) => {
                     type="text"
                     name="function"
                     options={["select", ...functions]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 <div className="mt-10">
@@ -66,7 +66,7 @@ const IndustryPopup = ({ setShowPopup }) => {
                     type="text"
                     name="seniority"
                     options={["select", ...seniorityList]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 <div className="mt-10">
@@ -77,7 +77,7 @@ const IndustryPopup = ({ setShowPopup }) => {
                     type="text"
                     name="employmentType"
                     options={["select", ...employmentTypes]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 <div className="mt-10">
@@ -88,7 +88,7 @@ const IndustryPopup = ({ setShowPopup }) => {
                     type="text"
                     name="salaryRange"
                     options={["select", ...salaryRangeList]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 <div className="mt-10">
@@ -99,7 +99,7 @@ const IndustryPopup = ({ setShowPopup }) => {
                     type="text"
                     name="numEmployee"
                     options={["select", ...numEmployeeList]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
                 <div className="mt-10">
@@ -110,7 +110,7 @@ const IndustryPopup = ({ setShowPopup }) => {
                     type="text"
                     name="businessTurnover"
                     options={["select", ...businessTurnoverList]}
-                    className="my-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full"
+                    box
                   />
                 </div>
 

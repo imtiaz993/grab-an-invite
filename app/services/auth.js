@@ -6,7 +6,7 @@ export const login = async (values) => {
     const { status, data } = await publicRequest({
       url: "/user/login",
       method: "POST",
-      data: { ...values, username: values.email },
+      data: values,
     });
     return { status, data };
   } catch (e) {

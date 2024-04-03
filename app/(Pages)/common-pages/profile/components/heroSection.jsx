@@ -37,13 +37,21 @@ const HeroSection = () => {
               <p className="font-bold text-opacity-85 mr-6">
                 Location Tracking
               </p>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="newsletter"
+                className="accent-secondary w-5 h-5 bg-secondary cursor-pointer"
+              />
             </div>
             <div className="inline-flex items-center">
               <img src="/images/dashboardImages/premiumCrown.png" alt="" />
               <p className="text-[#FFAD09] font-bold ml-3">Premium</p>
             </div>
-            <div className="rounded-full p-3 border border-secondary w-fit cursor-pointer" onClick={()=>setInfoPopup(true)}>
+            <div
+              className="rounded-full p-3 border border-secondary w-fit cursor-pointer"
+              onClick={() => setInfoPopup(true)}
+            >
               <Pencil color="#1C85A4" />
             </div>
           </div>

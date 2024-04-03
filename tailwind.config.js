@@ -25,6 +25,7 @@ module.exports = {
         time: "0px 4px 24px 0px #3297F71F",
         "blog-card": "0px 0px 24px 0px #0000001F",
         social: "0px 2px 11px 0px #0000002E",
+        light: "0px 0px 10px 0px #0000000D",
       },
     },
   },

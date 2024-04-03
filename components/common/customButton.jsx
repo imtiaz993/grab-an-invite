@@ -9,6 +9,7 @@ const CustomButton = ({
   type = "button",
   outlined = false,
   Icon,
+  disabled,
 }) => {
   return (
     <button
@@ -21,6 +22,7 @@ const CustomButton = ({
       } ${style}`}
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       {Icon && <Icon />} {text}
     </button>

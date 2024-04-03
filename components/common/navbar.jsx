@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 import { Search } from "@/icons";
 import { ArrowDown, Notification } from "../../icons";
 import ProfileDropdown from "./profileDropdown";
@@ -9,6 +10,7 @@ import CategoriesDropdown from "./categoriesDropdown";
 import logo from "@/public/images/logo.png";
 
 const Navbar = () => {
+  const { data, status } = useSession();
   const [profileMenu, setProfileMenu] = useState(false);
   const [notificationMenu, setNotificationMenu] = useState(false);
   const [categoriesMenu, setCategoriesMenu] = useState(false);
@@ -47,11 +49,9 @@ const Navbar = () => {
 
   return (
     <nav className="flex items-center justify-between py-[19px] text-white bg-header-background object-cover bg-no-repeat bg-cover px-[12%] absolute top-0 z-20 w-full">
-      <img
-        src={logo.src}
-        alt="Logo"
-        className="w-44 h-6"
-      />
+      <Link href={"/"}>
+        <img src={logo.src} alt="Logo" className="w-44 h-6" />
+      </Link>
       <div>
         <div className="inline relative" ref={categoriesDropdownRef}>
           <button
@@ -80,50 +80,53 @@ const Navbar = () => {
             <Search />
           </Link>
         </div>
-
-        {/* <button className="w-[60px] h-5 mr-4">
-          <Link href="/signup">Signup</Link>
-        </button>
-
-        <button
-          type="button"
-          className="w-32 h-12 font-bold  text-white bg-button-primary rounded-full"
-        >
-          <Link href="/login">Login</Link>
-        </button> */}
-
-        <div className="flex">
-          <div
-            className="w-11 h-11 flex justify-center items-center border rounded-full mr-10 relative cursor-pointer"
-            ref={notificationDropdownRef}
-          >
-            <div onClick={() => setNotificationMenu((prev) => !prev)}>
-              <Notification />
-            </div>
-            {notificationMenu && (
-              <div className="absolute top-12 right-0">
-                <NotificationDropdown />
-              </div>
-            )}
-          </div>
-          <div
-            className="font-bold flex items-center gap-3 relative cursor-pointer select-none"
-            ref={profileDropdownRef}
-          >
+        {status === "authenticated" ? (
+          <div className="flex">
             <div
-              onClick={() => setProfileMenu((prev) => !prev)}
-              className="font-bold flex items-center gap-3 relative cursor-pointer select-none"
+              className="w-11 h-11 flex justify-center items-center border rounded-full mr-10 relative cursor-pointer"
+              ref={notificationDropdownRef}
             >
-              <p>DavidRay123</p>
-              <ArrowDown />
-            </div>
-            {profileMenu && (
-              <div className="absolute top-12 right-0">
-                <ProfileDropdown />
+              <div onClick={() => setNotificationMenu((prev) => !prev)}>
+                <Notification />
               </div>
-            )}
+              {notificationMenu && (
+                <div className="absolute top-12 right-0">
+                  <NotificationDropdown />
+                </div>
+              )}
+            </div>
+            <div
+              className="font-bold flex items-center gap-3 relative cursor-pointer select-none"
+              ref={profileDropdownRef}
+            >
+              <div
+                onClick={() => setProfileMenu((prev) => !prev)}
+                className="font-bold flex items-center gap-3 relative cursor-pointer select-none"
+              >
+                <p className="capitalize">{data.user.name}</p>
+                <ArrowDown />
+              </div>
+              {profileMenu && (
+                <div className="absolute top-12 right-0">
+                  <ProfileDropdown data={data} />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        ) : (
+          <>
+            <button className="w-[60px] h-5 mr-4">
+              <Link href="/signup">Signup</Link>
+            </button>
+
+            <button
+              type="button"
+              className="w-32 h-12 font-bold  text-white bg-button-primary rounded-full"
+            >
+              <Link href="/login">Login</Link>
+            </button>
+          </>
+        )}
       </div>
     </nav>
   );

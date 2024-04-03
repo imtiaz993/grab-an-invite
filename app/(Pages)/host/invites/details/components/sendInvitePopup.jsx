@@ -58,14 +58,16 @@ const SendInvitePopup = ({ setShowPopup }) => {
                     type="text"
                     name="category"
                     options={categories}
-                    className="w-40 h-11 rounded-md border border-dark20 bg-[#F5F5F5] p-5 outline-none placeholder:text-dark"
+                    box
+                    style="mt-[0px] !w-40 !h-11 rounded-md bg-[#F5F5F5] px-5 placeholder:text-dark"
                   />
                   <Dropdown
                     type="text"
                     name="expiresAfter"
                     placeholder="Expires after 24 hr"
                     options={expiresAfter}
-                    className="w-52 h-11 rounded-md border border-dark20 bg-[#F5F5F5] p-5 outline-none placeholder:text-dark"
+                    box
+                    style="mt-[0px] !w-52 !h-11 rounded-md bg-[#F5F5F5] px-5 placeholder:text-dark"
                   />
                 </div>
                 <div className="mt-10 flex flex-wrap gap-6">
@@ -79,11 +81,7 @@ const SendInvitePopup = ({ setShowPopup }) => {
                   <InviteListItem type="expired" />
                 </div>
                 <div className="mt-6 text-center">
-                  <CustomButton
-                    width="w-32"
-                    text="Send"
-                    onClick={() => {}}
-                  />
+                  <CustomButton width="w-32" text="Send" onClick={() => {}} />
                 </div>
               </div>
             </Form>

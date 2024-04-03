@@ -1,28 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { ArrowDown } from "@/icons";
 import { sidebarOptions } from "./sidebarOptions";
 
 const Layout = ({ children }) => {
-  const { data, status } = useSession();
   const pathname = usePathname();
+  const router = useRouter();
+  const { data, status } = useSession();
   const [activeIndex, setActiveIndex] = useState();
 
-  // if (status !== "authenticated") {
-  //   return <h2>Not Logged In</h2>;
-  // }
-  // if (status === "authenticated" && data.userType !== "host") {
-  //   return <h2>Not Authorized</h2>;
-  // }
+  useLayoutEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/login");
+    }
+    if (status === "authenticated" && data.user.role !== "host") {
+      router.push("/");
+    }
+  }, [status]);
 
   return (
     <div className="flex">
       <div className="min-w-[21%] bg-primary min-h-screen text-white sticky top-0 bottom-0">
         <div className="pt-20 flex justify-center">
-          <img src="/images/logo.png" alt="" className="w-44 h-6" />
+          <Link href={"/"}>
+            <img src="/images/logo.png" alt="" className="w-44 h-6" />
+          </Link>
         </div>
         <div className="mt-20">
           <ul>

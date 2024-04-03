@@ -1,6 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { Form, Formik } from "formik";
 import CustomButton from "@/components/common/customButton";
 import SignupSocials from "./signupSocials";
@@ -10,8 +12,26 @@ import SignupPopup from "./signupPopup";
 import { register } from "../../../../services/auth";
 
 const SignupWrapper = () => {
+  const router = useRouter();
+  const { data, status } = useSession();
   const [step, setStep] = useState(1);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      switch (data.user.role) {
+        case "guest":
+          router.push("/guest/dashboard");
+          break;
+        case "host":
+          router.push("/host/dashboard");
+          break;
+        case "admin":
+          router.push("/admin/dashboard");
+          break;
+      }
+    }
+  }, [status, data, router]);
 
   return (
     <div>
@@ -39,7 +59,7 @@ const SignupWrapper = () => {
           emailUpdates: "",
         }}
         onSubmit={async (values) => {
-          const response = await register(values);
+          // const response = await register(values);
         }}
       >
         {({ values }) => (
@@ -74,7 +94,7 @@ const SignupWrapper = () => {
                 <SignupForm />
                 <div className="flex justify-end mt-6">
                   <CustomButton
-                    width='w-32'
+                    width="w-32"
                     text="Continue"
                     onClick={() => {
                       setStep(2);
@@ -95,8 +115,8 @@ const SignupWrapper = () => {
                       Go Back
                     </button>
                     <CustomButton
-                    width='w-32'
-                    text="Sign up"
+                      width="w-32"
+                      text="Sign up"
                       onClick={() => {
                         setOpen(true);
                       }}
