@@ -16,7 +16,8 @@ const Revenue = () => {
           name="year"
           className="ml-4 w-20 outline-none font-medium text-lg"
         >
-          {years && years.map((year) => <option>{year}</option>)}
+          {years &&
+            years.map((year, index) => <option key={index}>{year}</option>)}
         </select>
       </div>
       <div className="w-full h-52">
