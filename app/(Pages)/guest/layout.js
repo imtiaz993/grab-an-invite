@@ -2,7 +2,7 @@
 import React, { useLayoutEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { sidebarOptions } from "./sidebarOptions";
 
 const Layout = ({ children }) => {
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex">
-      <div className="min-w-[21%] bg-primary h-screen text-white sticky top-0">
+      <div className="min-w-[21%] bg-primary h-screen text-white sticky top-0 overflow-auto">
         <div className="pt-20 flex justify-center">
           <Link href={"/"}>
             <img src="/images/logo.png" alt="" className="w-44 h-6" />
@@ -47,6 +47,16 @@ const Layout = ({ children }) => {
                 </li>
               </Link>
             ))}
+            <li
+              className={`flex gap-3 items-center h-16 w-full pl-[30%] cursor-pointer `}
+              onClick={async () => {
+                await signOut();
+                router.push("/");
+              }}
+            >
+              <img src={"/images/dashboardImages/logoutIcon.png"} alt="" />
+              Logout
+            </li>
           </ul>
         </div>
       </div>

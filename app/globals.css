@@ -11,3 +11,7 @@ html,
 body {
   height: 100% !important;
 }
+
+.navbarHeader {
+  background-image: url("/images/headerbackground.png");
+}

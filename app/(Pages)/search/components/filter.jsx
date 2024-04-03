@@ -6,7 +6,7 @@ const Filter = () => {
   const [locationMenu, setLocationMenu] = useState(false);
 
   return (
-    <div className="flex items-center justify-start gap-5 py-[19px] text-white bg-header-background object-cover bg-no-repeat bg-cover px-[12%] w-full">
+    <div className="flex items-center justify-start gap-5 py-[19px] text-white navbarHeader object-cover bg-no-repeat bg-cover px-[12%] w-full">
       <button className="w-40 h-12 border border-[white] rounded-full font-medium">
         On Sale Today
       </button>

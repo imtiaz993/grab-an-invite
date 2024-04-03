@@ -29,7 +29,7 @@ const Questions = () => {
             <Field
               type="text"
               key={index}
-              // name="question"
+              name="question"
               placeholder="Please type question"
               className="mt-3 focus:outline-none border border-dark border-opacity-20 p-3 pl-5 rounded-lg w-full placeholder:text-dark"
             />

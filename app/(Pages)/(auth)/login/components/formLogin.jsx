@@ -10,7 +10,7 @@ import CustomButton from "@/components/common/customButton";
 
 const FormLogin = () => {
   const router = useRouter();
-  const { data, status } = useSession();
+  const { status } = useSession();
   const [step, setStep] = useState(1);
 
   const loginHandler = async (values, setSubmitting) => {
@@ -28,19 +28,9 @@ const FormLogin = () => {
 
   useEffect(() => {
     if (status === "authenticated") {
-      switch (data.user.role) {
-        case "guest":
-          router.push("/guest/dashboard");
-          break;
-        case "host":
-          router.push("/host/dashboard");
-          break;
-        case "admin":
-          router.push("/admin/dashboard");
-          break;
-      }
+      router.push("/");
     }
-  }, [status, data, router]);
+  }, [status, router]);
 
   return (
     <div>

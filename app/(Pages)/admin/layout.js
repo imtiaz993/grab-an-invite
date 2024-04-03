@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { ArrowDown } from "@/icons";
 import { sidebarOptions } from "./sidebarOptions";
 
@@ -91,6 +91,16 @@ const Layout = ({ children }) => {
                 </li>
               )
             )}
+            <li
+              className={`flex gap-3 items-center h-16 w-full pl-[30%] cursor-pointer `}
+              onClick={async () => {
+                await signOut();
+                router.push("/");
+              }}
+            >
+              <img src={"/images/dashboardImages/logoutIcon.png"} alt="" />
+              Logout
+            </li>
           </ul>
         </div>
       </div>

@@ -1,21 +1,7 @@
 import React from "react";
-import { months, years } from "@/constants/monthsAndYears";
+import { months } from "@/constants/monthsAndYears";
 
 const TrafficChart = () => {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
   const years = Array.from(
     { length: new Date().getFullYear() - 2015 },
     (_, index) => 2016 + index
@@ -34,13 +20,17 @@ const TrafficChart = () => {
             name="month"
             className="py-4 px-5 w-28 rounded-full shadow-blog-card outline-none text-[#1D1D1DB2]"
           >
-            {months && months.map((month, index) => <option key={index}>{month}</option>)}
+            {months &&
+              months.map((month, index) => (
+                <option key={index}>{month.slice(0, 3)}</option>
+              ))}
           </select>
           <select
             name="year"
             className="ml-4 py-4 px-5 w-28 rounded-full shadow-blog-card outline-none text-[#1D1D1DB2]"
           >
-            {years && years.map((year, index) => <option key={index}>{year}</option>)}
+            {years &&
+              years.map((year, index) => <option key={index}>{year}</option>)}
           </select>
         </div>
       </div>

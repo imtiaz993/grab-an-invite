@@ -41,5 +41,4 @@ export const sidebarOptions = [
     image: "changePassIcon.png",
     route: "/change-password",
   },
-  { title: "Logout", image: "logoutIcon.png", route: "/logout" },
 ];

@@ -48,7 +48,7 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="flex items-center justify-between py-[19px] text-white bg-header-background object-cover bg-no-repeat bg-cover px-[12%] absolute top-0 z-20 w-full">
+    <nav className="flex items-center justify-between py-[19px] text-white navbarHeader object-cover bg-no-repeat bg-cover px-[12%] absolute top-0 z-20 w-full">
       <Link href={"/"}>
         <img src={logo.src} alt="Logo" className="w-44 h-6" />
       </Link>
