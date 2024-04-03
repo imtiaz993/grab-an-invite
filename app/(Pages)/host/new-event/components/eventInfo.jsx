@@ -80,9 +80,9 @@ const EventInfo = ({ recurring, recurringType }) => {
 
             {recurringTypes &&
               recurringTypes.map(
-                (type) =>
+                (type, index) =>
                   type === recurringType && (
-                    <div className="mt-6 w-full">
+                    <div className="mt-6 w-full" key={index}>
                       <label htmlFor="" className="text-lg font-medium">
                         {type}
                       </label>

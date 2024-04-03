@@ -43,7 +43,7 @@ const DashboardPage = () => {
             <div className="mt-5 w-full h-7 bg-secondary rounded-full"></div>
             <p className="mt-9 opacity-70">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type.
             </p>
@@ -57,7 +57,7 @@ const DashboardPage = () => {
                 name="year"
                 className="ml-4 w-20 outline-none font-medium text-lg"
               >
-                {years && years.map((year) => <option>{year}</option>)}
+                {years && years.map((year, index) => <option key={index}>{year}</option>)}
               </select>
             </div>
             <div className="w-full h-52">
